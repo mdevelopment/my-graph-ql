@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
 
-const FILMS_QUERY = gql`
+const SPACELAUNCH_QUERY = gql`
   {
     launchesPast(limit: 30) {
       id
@@ -24,7 +24,7 @@ const FILMS_QUERY = gql`
 //`;
 
 export default function App() {
-  const { data, loading, error } = useQuery(FILMS_QUERY);
+  const { data, loading, error } = useQuery(SPACELAUNCH_QUERY);
 
 
   if (loading) return "Loading...";
