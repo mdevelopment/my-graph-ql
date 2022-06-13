@@ -14,14 +14,6 @@ const SPACELAUNCH_QUERY = gql`
 
 `;
 
-//const LAUNCHPADS_QUERY = gql`
-  //{
-    //launchpads(limit: 30) {
-    // location
-   // }
- // }
-
-//`;
 
 export default function App() {
   const { data, loading, error } = useQuery(SPACELAUNCH_QUERY);
@@ -35,7 +27,7 @@ export default function App() {
       <h1>SpaceX Launches</h1>
       <ul>
         {data.launchesPast.map((launch) => (
-          <li key={launch.id}>{launch.mission_name} <br /> <div style={{display: "inline-block", paddingLeft:"0px"}}> {launch.launch_site.site_name_long}</div></li>
+          <li key={launch.id}><div style={{fontWeight:"Bold"}}>{launch.mission_name}</div> <div style={{display: "inline-block", paddingLeft:"0px"}}> {launch.launch_site.site_name_long}</div></li>
         ))}  
       </ul>
     </div>
